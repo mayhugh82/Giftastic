@@ -26,6 +26,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
+        console.log(response);
       // Creating a div to hold the movie
       var tvShowDiv = $("<div class='tvShow'>");
 
@@ -85,8 +86,8 @@ $(document).ready(function () {
     // This line grabs the input from the textbox
     var tvShow = $("#tvShow-input").val().trim();
 
-    // Adding movie from the textbox to our array
-    tvShows.push(tvShow);
+    // Adding tvshow from the textbox to our array
+    topics.push(tvShow);
 
     // Calling renderButtons which handles the processing of our topics array
     renderButtons();
