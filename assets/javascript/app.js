@@ -1,16 +1,16 @@
 $(document).ready(function () {
   //Initial array of tv shows
   var tvShows = [
-    "game_of_thrones",
-    "westworld",
-    "glee",
-    "greys_anatomy",
-    "xena",
-    "supergirl",
-    "the_100",
-    "altered_carbon",
-    "mandalorian",
-    "witcher",
+    "Game of Thrones",
+    "Westworld",
+    "Glee",
+    "Greys Anatomy",
+    "Xena",
+    "Supergirl",
+    "The100",
+    "Altered Carbon",
+    "Mandalorian",
+    "Witcher",
   ];
 
   // displayMovieInfo function re-renders the HTML to display the appropriate content
