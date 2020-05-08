@@ -27,11 +27,12 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-    $('#tvShows-view').append("<p>Rating: "+response.data[0].rating+"</p>");
-        // Creating a div to hold the tv
-      var tvShowDiv = $("<div class='tvShow'>");
-
-      
+    for (var i = 0; i < tvShows.length; i++){
+      //append rating to gif
+      $("#tvShows-view").prepend("<p>Rating: " + response.data[i].rating + "</p>");
+      // append slected gifs to page
+      $("#tvShows-view").prepend("<img src='"+response.data[i].images.downsized.url+"'>");
+    }
     });
   }
 
