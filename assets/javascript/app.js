@@ -2,6 +2,13 @@ $(document).ready(function(){
 
 var topics = ["game_of_thrones","westworld","glee","greys_anatomy","xena","supergirl","the_100","altered_carbon","mandalorian","witcher"];
 
+loadMyButtons function () {
+for (let i = 0; i < topics.length; i++) {
+    $('.container').append('<button class="myButtons">'+i+'</button>')
+}
+}):
+
+
 $('button').on('click', function(){
     var x = $(this).data("search");
 
