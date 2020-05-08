@@ -27,7 +27,7 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       // Creating a div to hold the movie
-      var TVShowDiv = $("<div class='tvShow'>");
+      var tvShowDiv = $("<div class='tvShow'>");
 
       // Storing the rating data
       var rating = response.Rated;
@@ -36,25 +36,12 @@ $(document).ready(function () {
       var pOne = $("<p>").text("Rating: " + rating);
 
       // Displaying the rating
-      TVShowDiv.append(pOne);
+      tvShowDiv.append(pOne);
 
-      // Storing the release year
-      var released = response.Released;
 
-      // Creating an element to hold the release year
-      var pTwo = $("<p>").text("Released: " + released);
 
-      // Displaying the release year
-      movieDiv.append(pTwo);
 
-      // Storing the plot
-      var plot = response.Plot;
 
-      // Creating an element to hold the plot
-      var pThree = $("<p>").text("Plot: " + plot);
-
-      // Appending the plot
-      movieDiv.append(pThree);
 
       // Retrieving the URL for the image
       var imgURL = response.Poster;
@@ -70,23 +57,23 @@ $(document).ready(function () {
     });
   }
 
-  // Function for displaying movie data
+  // Function for displaying tv gif
   function renderButtons() {
-    // Deleting the movies prior to adding new movies
+    // Deleting the gifs prior to adding new gifs
     // (this is necessary otherwise you will have repeat buttons)
     $("#buttons-view").empty();
 
-    // Looping through the array of movies
-    for (var i = 0; i < movies.length; i++) {
-      // Then dynamicaly generating buttons for each movie in the array
+    // Looping through the array of gif topics
+    for (var i = 0; i < topics.length; i++) {
+      // Then dynamicaly generating buttons for each gif topic in the array
       // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
       var a = $("<button>");
       // Adding a class of movie-btn to our button
-      a.addClass("movie-btn");
+      a.addClass("topics-btn");
       // Adding a data-attribute
-      a.attr("data-name", movies[i]);
+      a.attr("data-name", topics[i]);
       // Providing the initial button text
-      a.text(movies[i]);
+      a.text(topics[i]);
       // Adding the button to the buttons-view div
       $("#buttons-view").append(a);
     }
