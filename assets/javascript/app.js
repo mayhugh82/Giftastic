@@ -27,7 +27,7 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       // Creating a div to hold the movie
-      var movieDiv = $("<div class='movie'>");
+      var TVShowDiv = $("<div class='tvShow'>");
 
       // Storing the rating data
       var rating = response.Rated;
@@ -36,7 +36,7 @@ $(document).ready(function () {
       var pOne = $("<p>").text("Rating: " + rating);
 
       // Displaying the rating
-      movieDiv.append(pOne);
+      TVShowDiv.append(pOne);
 
       // Storing the release year
       var released = response.Released;
