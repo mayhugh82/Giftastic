@@ -35,6 +35,7 @@ $(document).ready(function () {
         // append slected gifs to page
         var img = $("<img>");
         img.attr("src", response.data[i].images.downsized.url);
+        console.log(response.data[i].images.downsized.url);
         img.attr("data-animate", response.data[i].images.downsized.url);
         img.attr("data-still", response.data[i].images.downsized_still.url);
         img.attr("data-state", "animated");
@@ -44,9 +45,8 @@ $(document).ready(function () {
     });
   }
   $(document).on("click", ".gif", function () {
-    var state = $(this).data("state");
+    var state = $(this).attr("data-state");
     var still = $(this).data("still");
-    
     var animated = $(this).data("animate");
     if (state === "still") {
       $(this).attr("src", $(this).attr("data-animate"));
