@@ -27,15 +27,35 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-    for (var i = 0; i < tvShows.length; i++){
-      //append rating to gif
-      $("#tvShows-view").prepend("<p>Rating: " + response.data[i].rating + "</p>");
-      // append slected gifs to page
-      $("#tvShows-view").prepend("<img src='"+response.data[i].images.downsized.url+"'>");
-    }
+      for (var i = 0; i < response.data.length; i++) {
+        //append rating to gif
+        $("#tvShows-view").prepend(
+          "<p>Rating: " + response.data[i].rating + "</p>"
+        );
+        // append slected gifs to page
+        var img = $("<img>");
+        img.attr("src", response.data[i].images.downsized.url);
+        img.attr("data-animate", response.data[i].images.downsized.url);
+        img.attr("data-still", response.data[i].images.downsized_still.url);
+        img.attr("data-state", "animated");
+        img.attr("class", "gif");
+        $("#tvShows-view").prepend(img);
+      }
     });
   }
-
+  $(document).on("click", ".gif", function () {
+    var state = $(this).data("state");
+    var still = $(this).data("still");
+    
+    var animated = $(this).data("animate");
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+  });
   // Function for displaying tv gif
   function renderButtons() {
     // Deleting the gifs prior to adding new gifs

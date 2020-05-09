@@ -1,5 +1,5 @@
 .tvShows-btn {
-  margin: 10px;;
+  margin: 10px;
   font-family: "HarryP", "Times New Roman", Times, serif;
   font-size: 30px;
   color: rgba(219, 210, 183, 0.76);
@@ -20,9 +20,12 @@
 }
 
 label {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h1 {
-    font-size: 30px;
+  font-size: 30px;
+}
+
+#tvShows-view {
 }
