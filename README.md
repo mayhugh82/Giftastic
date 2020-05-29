@@ -22,7 +22,7 @@ What's your favorite TV Show?
 
 ### Attached to Portfolio
 
-This link was attached to the TV Show Widget on my Portfolio - [ResponsivePortfolio](https://mayhugh82.github.io/DianaPortfolio/)
+This link was attached to the TV Show Widget on my Portfolio - [DianaPortfolio](https://mayhugh82.github.io/DianaPortfolio/)
 
 ## Authors
 
