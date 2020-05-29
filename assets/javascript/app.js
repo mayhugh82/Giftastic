@@ -34,11 +34,10 @@ $(document).ready(function () {
         );
         // append slected gifs to page
         var img = $("<img>");
-        img.attr("src", response.data[i].images.downsized.url);
-        console.log(response.data[i].images.downsized.url);
+        img.attr("src", response.data[i].images.downsized_still.url);
         img.attr("data-animate", response.data[i].images.downsized.url);
         img.attr("data-still", response.data[i].images.downsized_still.url);
-        img.attr("data-state", "animated");
+        img.attr("data-state", "still");
         img.attr("class", "gif");
         $("#tvShows-view").prepend(img);
       }
